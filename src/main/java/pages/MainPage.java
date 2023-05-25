@@ -14,13 +14,14 @@ public class MainPage {
         this.driver = driver;
     }
 
-  By school=By.xpath("//li[contains(@class,\"site-nav-menu_item\")]/button[@data-dropdown-trigger=\"aboutSchool\"]"),
-    schoolDownMenu=By.xpath("//li[contains(@class,\"site-nav-menu_item\")]//ul[@data-dropdown-menu=\"aboutSchool\"]//li");
+    By school = By.xpath("//li[contains(@class,\"site-nav-menu_item\")]/button[@data-dropdown-trigger=\"aboutSchool\"]"),
+            schoolDownMenu = By.xpath("//li[contains(@class,\"site-nav-menu_item\")]//ul[@data-dropdown-menu=\"aboutSchool\"]//li");
+
     public List<String> getListNames() {
-        List<String>list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         driver.findElement(school).click();
         for (WebElement element : driver.findElements(schoolDownMenu)) {
-                       list.add(element.getText());
+            list.add(element.getText());
         }
         return list;
     }
