@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class DriverFactory {
-    static WebDriver greateDriver(WEBDRIVERS webdrivers){
+    public static WebDriver greateDriver(WEBDRIVERS webdrivers){
         WebDriver driver = null;
         switch (webdrivers){
             case CHROMECLEAN -> driver=createCleanChrome();

@@ -17,7 +17,12 @@ public class Util {
                 driver.findElement(by);
                 bool = true;
             } catch (Exception ignore) {
-                js.executeScript("window.scrollBy(0,1000)");
+                js.executeScript("window.scrollBy(0,500)");
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
